@@ -12,11 +12,11 @@ namespace Officium._3Examples
         {  
             using (var b = new Builder(builder.Services))
             {
-                b.BeforeEveryRequest<PreVariblesHandler>();
+                b.BeforeEveryRequest<PreVariablesHandler>();
 
-                b.OnRequest<VariblesHandler>(
+                b.OnRequest<VariablesHandler>(
                     RequestMethod.GET,
-                    "/api/Varibles/{somename}");
+                    "/api/Variables/{somename}");
             }
 
             builder.Services.AddHttpClient();

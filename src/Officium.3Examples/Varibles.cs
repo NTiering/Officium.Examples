@@ -18,22 +18,22 @@ namespace Officium._3Examples
             this.requestResolver = requestResolver;
         }
 
-        [FunctionName("Varibles")]
+        [FunctionName("Variables")]
         public IActionResult Run(
             [HttpTrigger(
             AuthorizationLevel.Function, "get", "post",
-            Route = "Varibles/{n?}")]
+            Route = "Variables/{n?}")]
             HttpRequest req,
             ILogger log)
         {
-            log.LogDebug($"Executing Varibles function");
+            log.LogDebug($"Executing Variables function");
             var reqContext = req.MakeRequestContext();
             var resContext = requestResolver.Execute(reqContext);
             return resContext.GetActionResult();
         }
     }
 
-    public class PreVariblesHandler : IHandler
+    public class PreVariablesHandler : IHandler
     {
         public void HandleRequest(RequestContext request, ResponseContent response)
         {
@@ -41,7 +41,7 @@ namespace Officium._3Examples
         }
     }
 
-    public class VariblesHandler : IHandler
+    public class VariablesHandler : IHandler
     {
         public void HandleRequest(RequestContext request, ResponseContent response)
         {
