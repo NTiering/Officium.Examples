@@ -36,7 +36,7 @@ namespace Officium._6Examples
 
     public class RequestHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             throw new System.IO.FileNotFoundException("Cant Find important file !!!! !");
         }
@@ -50,7 +50,7 @@ namespace Officium._6Examples
         {
             this.logger = logger; 
         }
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             logger.Log($"Oh no an error occured of type {response.Exception.GetType().Name} with the message '{response.Exception.Message}'");
             response.Exception = new Exception("sorry a very generic problem occured. Nothing to see here ");

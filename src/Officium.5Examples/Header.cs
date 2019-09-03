@@ -35,7 +35,7 @@ namespace Officium._5Examples
 
     public class HeaderHandler : IHandler
     {        
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             response.Result = "This is your Cache-Control value ='" + request.GetHeaderValue("Cache-Control") + "' ";
         }

@@ -41,7 +41,7 @@ namespace Officium._4Examples
         {
             this.textProvider = textProvider;
         }
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             request.SetInternalValue("Greeting", textProvider.GetGreeting() );
         }
@@ -54,7 +54,7 @@ namespace Officium._4Examples
         {
             this.textProvider = textProvider;
         }
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             response.Result =
                 new

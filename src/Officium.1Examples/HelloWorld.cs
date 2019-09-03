@@ -35,7 +35,7 @@ namespace Officium._1Examples
 
     public class HelloWorldHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             response.Result = new { Message = "Hello " + request.GetValue("name").WithDefault("Stranger ! add a name param to the url") };
         }

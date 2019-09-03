@@ -35,7 +35,7 @@ namespace Officium._3Examples
 
     public class PreVariablesHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             request.SetInternalValue("Greeting", "Hello");
         }
@@ -43,7 +43,7 @@ namespace Officium._3Examples
 
     public class VariablesHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             response.Result =
                 new

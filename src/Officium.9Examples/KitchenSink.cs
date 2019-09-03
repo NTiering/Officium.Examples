@@ -37,7 +37,7 @@ namespace Officium._9Examples
 
     public class AuthHandler : IHandler
     {       
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             Console.WriteLine($"Calling {this.GetType().Name}");
         }
@@ -45,7 +45,7 @@ namespace Officium._9Examples
 
     public class BeforeEveryRequestHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             Console.WriteLine($"Calling {this.GetType().Name}");
         }
@@ -53,7 +53,7 @@ namespace Officium._9Examples
 
     public class AfterEveryRequestHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             Console.WriteLine($"Calling {this.GetType().Name}");
         }
@@ -61,7 +61,7 @@ namespace Officium._9Examples
 
     public class ValidationRequestHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             Console.WriteLine($"Calling {this.GetType().Name}");
         }
@@ -69,7 +69,7 @@ namespace Officium._9Examples
 
     public class NotHandledRequestHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             Console.WriteLine($"Calling {this.GetType().Name}");
         }
@@ -77,7 +77,7 @@ namespace Officium._9Examples
 
     public class RequestHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             Console.WriteLine($"Calling {this.GetType().Name}");
         }

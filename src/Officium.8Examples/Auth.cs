@@ -42,7 +42,7 @@ namespace Officium._8Examples
         {
             this.tokenResolver = tokenResolver;
         }
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             var token = request.GetHeaderValue("Authorization"); // get the user unique token 
             request.Identity = tokenResolver.GetIdentity(token);
@@ -52,7 +52,7 @@ namespace Officium._8Examples
     public class RequestHandler : IHandler
     {
         private static readonly Claim GlobalAdminClaim = new Claim("Role", "GlobalAdmin"); // reference claim to compare against
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             if (request.Identity.HasClaim(GlobalAdminClaim))
             {

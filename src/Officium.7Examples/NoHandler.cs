@@ -36,7 +36,7 @@ namespace Officium._7Examples
 
     public class NoHandlerFoundHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             response.StatusCode = 404;
             response.Result = "That resource is not present";

@@ -34,7 +34,7 @@ namespace Officium._1aExamples
 
     public class ValidatorHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             if (string.IsNullOrWhiteSpace(request.GetValue("name")))
             {
@@ -45,7 +45,7 @@ namespace Officium._1aExamples
 
     public class HelloWorldHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             response.Result = new { Message = "Hello " + request.GetValue("name") };
         }

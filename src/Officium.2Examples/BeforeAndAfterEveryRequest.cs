@@ -35,21 +35,21 @@ namespace Officium._2Examples
 
     public class BeforeHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             response.Result = new HandlerResult { BeforeMessage = "Before Hello " + request.GetValue("name").WithDefault("Stranger ! add a name param to the url") };
         }
     }
     public class HelloWorldHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             ((HandlerResult)response.Result).Message = "Hello " + request.GetValue("name").WithDefault("Stranger ! add a name param to the url");
         }
     }
     public class AfterHandler : IHandler
     {
-        public void HandleRequest(RequestContext request, ResponseContent response)
+        public void HandleRequest(IRequestContext request, IResponseContent response)
         {
             ((HandlerResult)response.Result).AfterMessage = "After Hello " + request.GetValue("name").WithDefault("Stranger ! add a name param to the url");
         }
