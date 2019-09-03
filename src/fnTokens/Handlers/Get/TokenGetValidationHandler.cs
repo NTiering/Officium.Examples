@@ -1,24 +1,18 @@
-﻿using fnTokens.Data;
-using Officium.Tools.Handlers;
+﻿using Officium.Tools.Handlers;
 using Officium.Tools.Request;
 using Officium.Tools.Response;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace fnTokens.Handlers.Get
 {
     public class TokenGetValidationHandler : IHandler
     {
-        private readonly ITokenDataCache _tokenDataCache;
-
-        public TokenGetValidationHandler(ITokenDataCache tokenDataCache)
-        {
-            _tokenDataCache = tokenDataCache;
-        }
         public void HandleRequest(IRequestContext request, IResponseContent response)
         {
-            throw new NotImplementedException();
+            var tokenId = request.GetValue("TokenId");
+            if (string.IsNullOrWhiteSpace(tokenId))
+            {
+                response.ValidationErrors.Add(new ValidationError { ErrorMessage = "Supply a TokenId", PropertyName = "TokenId" });
+            }
         }
     }
 }
