@@ -11,8 +11,7 @@ using Xunit;
 
 namespace fnTokens.Test.Handlers.Post
 {
-
-    public class TokenPostHandlerTests
+        public class TokenPostHandlerTests
     {
         [Fact]
         public void CanBeConstructed()

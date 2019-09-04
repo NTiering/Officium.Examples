@@ -1,8 +1,5 @@
 ﻿using FluentAssertions;
-using fnTokens.Data;
 using fnTokens.Handlers.Get;
-using fnTokens.Handlers.Post;
-using fnTokens.Settings;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Officium.Tools.Handlers;
@@ -32,10 +29,9 @@ namespace fnTokens.Test.Handlers.Get
         public void ValidRequestCauseNoErrors()
         {
             // arrange 
-            var tokenId = "aqsdasdsad";
             var requestContext = new Mock<IRequestContext>();
             var responseContent = new MockResponseContent();
-            requestContext.Setup(x => x.GetValue("TokenId")).Returns(tokenId);   
+            requestContext.Setup(x => x.GetValue("TokenId")).Returns("aqsdasdsad");   
 
             // act 
             new TokenGetValidationHandler().HandleRequest(requestContext.Object, responseContent);
